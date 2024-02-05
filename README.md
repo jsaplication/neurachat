@@ -1,1 +1,1 @@
-# neurachat
+# gemini-app
