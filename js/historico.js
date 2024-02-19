@@ -350,13 +350,24 @@ var conversa = getConversa();
     var chat = getChat();
     if(chat.length == 0){
       // console.log('não tem conversa');
+
+     var ads1 = ` <script type="text/javascript">
+    atOptions = {
+        'key' : '39521de0c2244c133fce9596a04dc54d',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+    };
+    document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/39521de0c2244c133fce9596a04dc54d/invoke.js"></scr' + 'ipt>');
+</script>`;
      $("#chat-load").html(`
                         <div class="bem-vindo">
                           <div class="box-bem">
                          NeuraChat
                          <br>
 
-                         <span>${intro()}</span>
+                         <span>${intro() + ads1}</span>
                         <button class="btn btn-primary" onclick="newChat()"><i class="fa fa-commenting-o"></i> ${btnnewchat()}</button>
 
                         </div>
