@@ -53,12 +53,20 @@ body{
 .chat-app .chat {
     margin-left: 280px;
 /*    border-left: 1px solid #eaeaea;*/
-    width: calc(100% - 580px);
+    width: calc(100% - 280px);
     position: fixed;
     height: calc(100%);
     background: #1a1d21;
 }
-
+/*.ads{
+    position: fixed;
+    right: 0;
+    display: block;
+    float: right;
+    width: 300px;
+    height: calc(100%);
+    background: red;
+}*/
 .people-list {
     -moz-transition: .5s;
     -o-transition: .5s;
