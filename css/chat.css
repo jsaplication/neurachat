@@ -53,7 +53,7 @@ body{
 .chat-app .chat {
     margin-left: 280px;
 /*    border-left: 1px solid #eaeaea;*/
-    width: calc(100% - 280px);
+    width: calc(100% - 580px);
     position: fixed;
     height: calc(100%);
     background: #1a1d21;

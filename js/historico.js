@@ -351,7 +351,9 @@ var conversa = getConversa();
     if(chat.length == 0){
       // console.log('não tem conversa');
 
-     var ads1 = ``;
+     var ads1 = `<script async="async" data-cfasync="false" src="//pl22551174.profitablegatecpm.com/ea491798cc85ca02f21772a2f0b93992/invoke.js"></script>
+<div id="container-ea491798cc85ca02f21772a2f0b93992"></div>
+`;
      $("#chat-load").html(`
                         <div class="bem-vindo">
                           <div class="box-bem">
@@ -360,7 +362,7 @@ var conversa = getConversa();
 
                          <span>${intro()}</span>
                         <button class="btn btn-primary" onclick="newChat()"><i class="fa fa-commenting-o"></i> ${btnnewchat()}</button>
-
+                        ${ads1}
                         </div>
                         </div>`);
     }else{
