@@ -532,12 +532,12 @@ input{
     color: #fafafa;
     text-align: center;
     height: calc(100vh - 210px) ;
-    
 
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     margin: 0 auto;
+    padding-top: 100px;
 
 }
 .bem-vindo span{
