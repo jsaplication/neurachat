@@ -288,7 +288,7 @@ function gemine(pergunta) {
           .then(obj => {
             
           
-
+            console.log(obj)
 
            if(obj.hasOwnProperty('error')){
 
@@ -502,7 +502,7 @@ function gemine(pergunta) {
           .then(obj => {
             
 
-
+console.log(obj)
             if(obj.hasOwnProperty('error')){
 
                 // gemine();
