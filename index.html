@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NeuraChat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/monokai-sublime.min.css">
+    <!-- <script async="async" data-cfasync="false" src="//pl22551174.profitablegatecpm.com/ea491798cc85ca02f21772a2f0b93992/invoke.js"></script> -->
+ 
+</head>
+<body>
+    
+
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+                <div id="plist" class="people-list">
+                    <div class="input-group chat-chats">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search..." onkeyup="search(this)">
+
+                         <a href="javascript:void(0);" class="btn btn-outline-primary" onclick="newChat()"><i class="fa fa-plus"></i></a>
+
+                    </div>
+                    <ul class="list-unstyled chat-list mt-2 mb-0" id="load-conversa">
+                        
+
+                    </ul>
+
+                    <div class="box-config">
+                        <div class="title-api">ApiKey</div>
+                        <div class="apikey"></div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#config-apikey" onclick="openModalApi()"><i class="fa fa-cog"></i> <span id="btn_ApiEdit"></span></button>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div class="col-lg-6 perfil">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                    <img src="img/ia.png" alt="avatar">
+                                </a>
+                                <div class="chat-about">
+                                    <h6 class="m-b-0">NeuraChat</h6>
+                                    <small style="color: #36D967">Connected</small>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 hidden-sm text-right menu" onclick="menu()">
+                                <a href="javascript:void(0);" class="btn btn-color-icon"><i class="fa fa-list"></i></a>
+                            </div>
+
+
+
+                            <div class="btn-info1" data-toggle="modal" data-target="#information1">
+                                <a href="javascript:void(0);" class="btn btn-color-icon"><i class="fa fa-info-circle"></i></a>
+                            </div>
+
+                            <div class="btn-info1" onclick="selectLg()">
+                                <a href="javascript:void(0);" class="btn btn-color-icon"><i class="fa fa-language"></i></a>
+                            </div>
+
+                           
+                           
+
+                        </div>
+                    </div>
+                    <div class="chat-history">
+                        <ul class="m-b-0" id="chat-load">
+                            
+                        </ul>
+                    </div>
+                    <div class="chat-message clearfix input-msg">
+                        <div class="digitando"><div class="ia"></div><label id="typing"></label></div>
+                        <div class="input-group mb-0">
+                            <!-- <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-send"></i></span>
+                            </div> -->
+                            <div class="input-group-prepend box-file">
+                                <span class="input-group-text">
+                               
+                                <i class="fa fa-camera"></i>
+                                 <input type="file" id="uploadFoto" accept=".png, .jpg, .jpeg">
+                                </span>
+
+                            </div>
+
+                            <div class="input-group-prepend img-view">
+                                
+                            </div>
+
+
+                            <input type="text" class="form-control" placeholder="What's on your mind?" id="pergunta" onkeydown="enter(event)" autofocus status="true">
+
+
+                            <div class="input-group-prepend box-send-msg" onclick="sendMSG()">
+                                <span class="input-group-text">
+                                    <i class="fa fa-send"></i>
+                                </span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+<div class="modal fade" id="config-apikey" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title-modal1"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+        <div class="panel panel-default">
+              <!-- <div class="panel-heading">Configure sua ApiKey</div> -->
+              <div class="panel-body">
+                <div class="tt1">
+                    <b>1.</b> <span id="text1_modal1"></span>
+                    <br>
+                    <br>
+
+                     <b>2.</b> <span id="text2_modal1"></span><br>
+                     <b>3.</b> <span id="text3_modal1"></span></b>.
+                     <img src="img/suite.png" width="100%"/>
+                </div>
+
+
+               
+                <div class="tt1"> 
+                    
+
+                     <img src="img/suite2.png" width="100%"/>
+
+                     <b>4.</b> <span id="text4_modal1"></span><br>
+                    <b>5.</b> <span id="text5_modal1"></span><br>
+
+                   
+
+                   
+                
+                 
+                </div>
+            </div>
+
+
+             <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">API_KEY:</label>
+                <input type="text" class="form-control" id="input_apikey" placeholder="Paste your ApiKey here">
+              </div>
+            </form>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary " id="btn_default_model1" onclick="default_apikey()"></button>
+        <button type="button" class="btn btn-primary " id="btn_save_model1" onclick="save_apikey()"></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="information1" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title_modal2"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+        <div class="panel panel-default">
+              <!-- <div class="panel-heading">Configure sua ApiKey</div> -->
+              <div class="panel-body">
+                <div class="tt1">
+                    
+                     <h3 id="text1_modal2"></h3>
+
+                      <p id="text2_modal2"></p>
+
+                      <h2 id="text3_modal2"></h2>
+
+                      <span id="text4_modal2"></span>
+
+                      <h2 id="text5_modal2"></h2>
+
+                      <span id="text6_modal2"></span>
+
+                      <p>
+                        <strong>Note:</strong> <span id="note"></span>
+                      </p>
+
+
+                    </div>
+                </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="translations">
+    <button id="closebtnlg" class="btn btn-close-lg" onclick="closeLg()"><i class="fa fa-times"></i></button>
+    <div class="box-lg">
+      <center><img src="img/ia.png" width="100px">
+        <h2>NeuraChat</h2></center>
+
+      <div class="title-lg">Select Language</div>
+            <select class="form-control" id="select-lg">
+                <option lg="chinese">Chinese</option>
+                <option lg="spanish">Spanish</option>
+                <option lg="english">English</option>
+                <option lg="hindi">Hindi</option> 
+                <option lg="arabic">Arabic</option>       
+                <option lg="portuguese">Portuguese</option>
+                <option lg="bengali">Bengali</option> 
+                <option lg="russian">Russian</option> 
+                <option lg="urdu">Urdu</option> 
+                <option lg="french">French</option>
+            </select>
+        <center><button class="btn btn-primary" onclick="saveLg()"><i class="fa fa-very"></i>Save</button></center>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+<script src="js/speech.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/markdown.js"></script>
+<script src="js/highlight.min.js"></script>
+
+
+<script src="js/jscrypt.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/formatcode.js"></script>
+<script src="js/historico.js"></script>
+<script src="js/app.js"></script>
+
+
+
+
+</html>
