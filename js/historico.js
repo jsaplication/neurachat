@@ -66,8 +66,14 @@ function newChat(){
   $("#chat-load").html('')
   $(".chat-message").show();
   $("#pergunta").focus();
-
-  window.location.href = ".show_ads."
+  console.log(window.innerWidth)
+  if(window.innerWidth <= 768){
+    console.log('mobile')
+    window.location.href = ".show_ads."
+  }else{
+    console.log('desktop')
+  }
+  
 }
 function setChat(title, d, uid, type){
     try{
