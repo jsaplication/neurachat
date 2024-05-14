@@ -1,1 +1,1 @@
-# gemini-app
+# NeuraChat
